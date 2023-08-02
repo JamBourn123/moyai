@@ -205,7 +205,7 @@ RService.RenderStepped:Connect(function()
             if getgenv().FirstPerson == true then
                 if CanNotify == true then
                     if getgenv().PredictMovement == true then 
-                        Camera.CFrame = CF(Camera.CFrame.p, AimlockTarget.Character[getgenv().AimPart].Position + AimlockTarget.Character[getgenv().AimPart].AssemblyLinearVelocity/PredictionVelocity + getgenv().Offset)
+                        Camera.CFrame = CF(Camera.CFrame.p, AimlockTarget.Character[getgenv().AimPart].Position + AimlockTarget.Character[getgenv().AimPart].Velocity/PredictionVelocity + getgenv().Offset)
                     elseif getgenv().PredictMovement == false then 
                         Camera.CFrame = CF(Camera.CFrame.p, AimlockTarget.Character[getgenv().AimPart].Position + getgenv().Offset)
                     end
@@ -213,7 +213,7 @@ RService.RenderStepped:Connect(function()
             elseif getgenv().ThirdPerson == true then 
                 if CanNotify == true then
                     if getgenv().PredictMovement == true then 
-                        Camera.CFrame = CF(Camera.CFrame.p, AimlockTarget.Character[getgenv().AimPart].Position + AimlockTarget.Character[getgenv().AimPart].AssemblyLinearVelocity/PredictionVelocity + getgenv().Offset)
+                        Camera.CFrame = CF(Camera.CFrame.p, AimlockTarget.Character[getgenv().AimPart].Position + AimlockTarget.Character[getgenv().AimPart].Velocity/PredictionVelocity + getgenv().Offset)
                     elseif getgenv().PredictMovement == false then 
                         Camera.CFrame = CF(Camera.CFrame.p, AimlockTarget.Character[getgenv().AimPart].Position + getgenv().Offset)
                     end
