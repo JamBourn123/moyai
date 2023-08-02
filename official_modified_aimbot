@@ -7,6 +7,7 @@ getgenv().FirstPerson = true -- Locking onto someone in your First Person POV
 getgenv().TeamCheck = false -- Check if Target is on your Team (True means it wont lock onto your teamates, false is vice versa) (Set it to false if there are no teams)
 getgenv().PredictMovement = true -- Predicts if they are moving in fast velocity (like jumping) so the aimbot will go a bit faster to match their speed 
 getgenv().PredictionVelocity = 10 -- The speed of the PredictMovement feature 
+getgenv().Offset = Vector3.new(0,0.5,0) -- Offset
 ]]--
 
 getgenv().CiazwareUniversalAimbotLoadingTime = tick()
@@ -205,9 +206,9 @@ RService.RenderStepped:Connect(function()
             if getgenv().FirstPerson == true then
                 if CanNotify == true then
                     if getgenv().PredictMovement == true then 
-                        Camera.CFrame = CF(Camera.CFrame.p, AimlockTarget.Character[getgenv().AimPart].Position + AimlockTarget.Character[getgenv().AimPart].Velocity/PredictionVelocity + headoffset)
+                        Camera.CFrame = CF(Camera.CFrame.p, AimlockTarget.Character[getgenv().AimPart].Position + AimlockTarget.Character[getgenv().AimPart].Velocity/PredictionVelocity + getgenv().Offset)
                     elseif getgenv().PredictMovement == false then 
-                        Camera.CFrame = CF(Camera.CFrame.p, AimlockTarget.Character[getgenv().AimPart].Position + headoffset)
+                        Camera.CFrame = CF(Camera.CFrame.p, AimlockTarget.Character[getgenv().AimPart].Position + getgenv().Offset)
                     end
                 end
             elseif getgenv().ThirdPerson == true then 
