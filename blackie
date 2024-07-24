@@ -1,0 +1,36 @@
+local function GetEnemies()
+     local excludeList = {
+		 ["Vulture Guard"] = false,
+		 ["Vulture Scout"] = false
+	 }
+
+	 local enemies = {}
+
+	 for _, container in {
+		 game:GetService("Workspace").NPCs.Hostile,
+         game:GetService("Workspace").ActiveTasks
+	 } do
+		 for _, enemy in container:GetChildren() do
+			 if enemy:IsA("Model") then
+				 if not excludeList[enemy.Name] then
+					 table.insert(enemies, enemy)
+				 end
+			 end
+		 end
+	 end
+
+	 return enemies
+end
+
+local function ResizeHeads(table, newSize)
+     for _, v in table do
+		 for _, head in v:GetDescendants() do
+			 if head:IsA("BasePart") and head.Name == "Head" then
+				 head.Size = Vector3.new(newSize, newSize, newSize)
+			 end
+		 end
+	 end
+end
+
+local enemies = GetEnemies()
+ResizeHeads(enemies, 6)
