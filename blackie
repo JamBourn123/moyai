@@ -9,7 +9,8 @@ local function GetEnemies()
 
 	 for _, container in {
 		 game:GetService("Workspace").NPCs.Hostile,
-         game:GetService("Workspace").ActiveTasks
+         game:GetService("Workspace").ActiveTasks,
+         game:GetService("Workspace").AccessDenied
 	 } do
 		 for _, enemy in container:GetChildren() do
 			 if enemy:IsA("Model") then
