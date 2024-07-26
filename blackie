@@ -1,8 +1,8 @@
 local function GetEnemies()
      local excludeList = {
-		 ["Vulture Guard"] = false,
-		 ["Vulture Scout"] = false,
-                 ["Vulture Mercenary"] = false
+		 ["Vulture Guard"] = true,
+		 ["Vulture Scout"] = true,
+                 ["Vulture Mercenary"] = true
 	 }
 
 	 local enemies = {}
