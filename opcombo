@@ -1,0 +1,15 @@
+local player = game:GetService("Players").LocalPlayer
+local backpack = player:FindFirstChildOfClass("Backpack")
+
+local roar = backpack:FindFirstChild("Roar")
+local wff = backpack:FindFirstChild("Wolf Fart Fist")
+local reapcomb = backpack:FindFirstChild("Reaper Combo")
+local spbf = backpack:FindFirstChild("Special Beam Fart")
+
+roar.Parent = player.Character
+task.wait(0.15)
+wff.Parent = player.Character
+task.wait(0.15)
+reapcomb.Parent = player.Character
+task.wait(0.15)
+spbf.Parent = player.Character
