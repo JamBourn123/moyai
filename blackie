@@ -14,7 +14,7 @@ local function GetEnemies()
 	 } do
 		 for _, enemy in container:GetChildren() do
 			 if enemy:IsA("Model") then
-				 if not excludeList[enemy.Name] then
+				 if not excludeList[enemy.Parent.Name] then
 					 table.insert(enemies, enemy)
 				 end
 			 end
@@ -29,6 +29,8 @@ local function ResizeHeads(table, newSize)
 		 for _, head in v:GetDescendants() do
 			 if head:IsA("BasePart") and head.Name == "Head" then
 				 head.Size = Vector3.new(newSize, newSize, newSize)
+				head.Transparency = 0.5
+				head.CanCollide = false
 			 end
 		 end
 	 end
